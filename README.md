@@ -34,7 +34,7 @@ Die geplante Adresse ist `https://thomaskopp.github.io/fackeln-am-abgrund/`. Sie
 
 `content/posts/*.json` enthält die gesicherten Wix-Rich-Content-Dokumente. `build.py` übersetzt sämtliche im Export vorkommenden Blocktypen. Eine neue unbekannte Struktur führt zu einem Fehler statt zu stillschweigendem Inhaltsverlust. Texte können in den `textData.text`-Feldern bearbeitet werden. `static/` enthält Gestaltung und Suche; `content/privacy.html` die an den zusätzlichen Hoster angepasste Datenschutzseite.
 
-Die GitHub-Kopie ist eine Momentaufnahme. Spätere Änderungen auf Wix erscheinen hier erst nach einem erneuten Export. Wix-Zugangsdaten sind weder enthalten noch für den Build erforderlich. Bereits heruntergeladene `assets/` können ins Repository aufgenommen werden, um auch künftige Builds vom Wix-Bildserver unabhängig zu machen.
+Die GitHub-Kopie ist eine Momentaufnahme. Spätere Änderungen auf Wix erscheinen hier erst nach einem erneuten Export. Wix-Zugangsdaten sind weder enthalten noch für den Build erforderlich. Der Workflow nimmt die heruntergeladenen `assets/` nach erfolgreicher Prüfung ins Repository auf, damit auch künftige Builds vom Wix-Bildserver unabhängig sind.
 
 ## Grenzen der Kopie
 
