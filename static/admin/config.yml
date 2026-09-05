@@ -4,6 +4,7 @@ backend:
   branch: main
   base_url: https://api.netlify.com
   site_domain: fackeln-am-abgrund-cms.netlify.app
+  auth_scope: public_repo
   use_graphql: true
 
 locale: de
