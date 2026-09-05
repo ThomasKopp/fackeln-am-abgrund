@@ -1,15 +1,15 @@
 {
-  "title": "Session 01: Das Abenteuer beginnt.",
-  "slug": "abenteuer-im-schatten-unsere-shadowdark-sessions",
-  "date": "2025-11-08T13:56:53.852Z",
-  "updated": "2026-06-30T18:22:37.408Z",
-  "excerpt": "Tauche ein in eine Welt voller Geheimnisse, Gefahren und unerwarteter Wendungen. Unsere Shadowdark-Sessions bieten genau das: intensive Rollenspielabenteuer, die Dich in dunkle Verliese und finstere Schattenwelten führen. In den Blogbeiträgen erzähle ich von unseren Erlebnissen... Was macht Shadowdark besonders? Shadowdark ist ein Rollenspiel, das sich durch seine Einfachheit und zugleich Tiefe auszeichnet. Es verbindet klassische Elemente des Dungeon Crawl mit modernen Mechaniken, die das...",
-  "category": "sessions",
-  "published": true,
+"excerpt": "Tauche ein in eine Welt voller Geheimnisse, Gefahren und unerwarteter Wendungen. Unsere Shadowdark-Sessions bieten genau das: intensive Rollenspielabenteuer, die Dich in dunkle Verliese und finstere Schattenwelten führen. In den Blogbeiträgen erzähle ich von unseren Erlebnissen... Was macht Shadowdark besonders? Shadowdark ist ein Rollenspiel, das sich durch seine Einfachheit und zugleich Tiefe auszeichnet. Es verbindet klassische Elemente des Dungeon Crawl mit modernen Mechaniken, die das...",
+  "original_url": "",
   "featured_image": "/fackeln-am-abgrund/assets/860736_9bba73df79284102a2db8ecdb045b836~mv2.webp",
+  "slug": "abenteuer-im-schatten-unsere-shadowdark-sessions",
+  "published": true,
+  "date": "2025-11-08T13:56:53.852Z",
+  "wix_id": "c319a948-fc3d-498b-9bd3-08c800182b2c",
   "featured_image_alt": "Session 01: Das Abenteuer beginnt.",
-  "original_url": "https://tkopp37.wixsite.com/fackeln-am-abgrund/post/abenteuer-im-schatten-unsere-shadowdark-sessions",
-  "wix_id": "c319a948-fc3d-498b-9bd3-08c800182b2c"
+  "title": "Session 01: Das Abenteuer beginnt.",
+  "updated": "2026-06-30T18:22:37.408Z",
+  "category": "sessions"
 }
 
 Tauche ein in eine Welt voller Geheimnisse, Gefahren und unerwarteter Wendungen. Unsere Shadowdark-Sessions bieten genau das: intensive Rollenspielabenteuer, die Dich in dunkle Verliese und finstere Schattenwelten führen. In den Blogbeiträgen erzähle ich von unseren Erlebnissen...
