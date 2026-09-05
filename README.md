@@ -4,9 +4,9 @@ Zusätzliche statische Kopie der bestehenden [Wix-Website](https://tkopp37.wixsi
 
 ## Inhalt
 
-- 19 vollständige veröffentlichte Beiträge: 14 Sessions und 5 Hintergrundbeiträge.
+- 19 vollständige, im Decap CMS bearbeitbare Beiträge: 14 Sessions und 5 Hintergrundbeiträge.
 - Startseite, Datenschutzseite, unveränderte Blog-Slugs, Formatierung, Tabellen und Bildunterschriften.
-- 34 Originalbilddateien im Download-Manifest; der Build lädt sie einmalig nach `assets/` und kopiert sie in das Deployment. Bei einem fehlenden Bild bricht der normale Build ab.
+- 34 archivierte Originalbilddateien sowie CMS-Uploads unter `assets/uploads/`. Bei einem fehlenden Bild bricht der normale Build ab.
 - Responsive Schwarz-Weiß-Gestaltung, lokale Beitragssuche, vergrößerbare Bilder und Druckansicht.
 - Links zu Kommentaren führen zum jeweiligen Wix-Original. Canonical-Links behalten Wix als Hauptquelle bei.
 
@@ -26,15 +26,17 @@ Für eine lokale Vorschau stattdessen mit `python build.py --base /site` bauen u
 
 ## GitHub Pages
 
-Repository: `ThomasKopp/fackeln-am-abgrund`. Unter Settings → Pages → Source `GitHub Actions` wählen. Der Workflow `Pages` baut und prüft die Website. Die Veröffentlichung wird manuell über Actions → Pages → Run workflow mit aktivierter Option `publish` ausgelöst. Normale Pushes prüfen nur und erzeugen ein herunterladbares Website-Artefakt.
+Repository: `ThomasKopp/fackeln-am-abgrund`. Unter Settings → Pages → Source `GitHub Actions` wählen. Der Workflow `Pages` baut, prüft und veröffentlicht die Website nach jeder Änderung auf `main`. Das gilt auch für Änderungen, die Decap CMS speichert. Der Workflow kann zusätzlich manuell gestartet werden.
 
 Die geplante Adresse ist `https://thomaskopp.github.io/fackeln-am-abgrund/`. Sie ist erst nach erfolgreichem Deployment verfügbar.
 
 ## Inhalte bearbeiten
 
-`content/posts/*.json` enthält die gesicherten Wix-Rich-Content-Dokumente. `build.py` übersetzt sämtliche im Export vorkommenden Blocktypen. Eine neue unbekannte Struktur führt zu einem Fehler statt zu stillschweigendem Inhaltsverlust. Texte können in den `textData.text`-Feldern bearbeitet werden. `static/` enthält Gestaltung und Suche; `content/privacy.html` die an den zusätzlichen Hoster angepasste Datenschutzseite.
+Die browserbasierte Bearbeitungsoberfläche liegt unter `https://thomaskopp.github.io/fackeln-am-abgrund/admin/`. Die einmalige OAuth-Freischaltung ist in [DECAP-EINRICHTUNG.md](DECAP-EINRICHTUNG.md) beschrieben.
 
-Die GitHub-Kopie ist eine Momentaufnahme. Spätere Änderungen auf Wix erscheinen hier erst nach einem erneuten Export. Wix-Zugangsdaten sind weder enthalten noch für den Build erforderlich. Der Workflow nimmt die heruntergeladenen `assets/` nach erfolgreicher Prüfung ins Repository auf, damit auch künftige Builds vom Wix-Bildserver unabhängig sind.
+`content/posts/*.md` enthält die von Decap verwalteten Beiträge. Alle 19 Wix-Beiträge wurden mit Titeln, Texten, Listen, Tabellen, Bildern, Bildunterschriften, Datumsangaben und unveränderten Slugs in dieses Format übertragen. Die ursprünglichen Wix-Rich-Content-Dokumente bleiben als `content/posts/*.json` unverändert daneben erhalten und werden vom CMS nicht angezeigt. `validate.py` vergleicht bei jedem Build die übertragenen Texte, Bild- und Tabellenanzahlen mit diesen Originalen. `static/` enthält Gestaltung, Suche und CMS-Oberfläche; `content/privacy.html` die an den zusätzlichen Hoster angepasste Datenschutzseite.
+
+Die GitHub-Kopie ist eine Momentaufnahme. Spätere Änderungen auf Wix erscheinen hier nicht automatisch. Neue Änderungen werden stattdessen über Decap CMS in GitHub gepflegt. Wix-Zugangsdaten sind weder enthalten noch für den Build erforderlich.
 
 ## Grenzen der Kopie
 
