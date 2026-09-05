@@ -1,0 +1,91 @@
+backend:
+  name: github
+  repo: ThomasKopp/fackeln-am-abgrund
+  branch: main
+  base_url: https://api.netlify.com
+  site_domain: fackeln-am-abgrund-cms.netlify.app
+  use_graphql: true
+
+locale: de
+site_url: https://thomaskopp.github.io/fackeln-am-abgrund/
+display_url: https://thomaskopp.github.io/fackeln-am-abgrund/
+logo_url: https://thomaskopp.github.io/fackeln-am-abgrund/assets/860736_689a1b6e45ca4d3c8942cea5d9d79b41~mv2.webp
+publish_mode: simple
+
+media_folder: assets/uploads
+public_folder: /fackeln-am-abgrund/assets/uploads
+
+collections:
+  - name: posts
+    label: Beiträge
+    label_singular: Beitrag
+    folder: content/posts
+    create: true
+    delete: false
+    extension: md
+    format: json-frontmatter
+    identifier_field: slug
+    slug: "{{fields.slug}}"
+    preview_path: "post/{{fields.slug}}/"
+    summary: "{{date}} · {{title}}"
+    sortable_fields: [date, title, category]
+    view_groups:
+      - label: Bereich
+        field: category
+    fields:
+      - label: Titel
+        name: title
+        widget: string
+      - label: URL-Kürzel
+        name: slug
+        widget: string
+        hint: "Nur Kleinbuchstaben, Zahlen und Bindestriche. Bei bestehenden Beiträgen nicht ändern, damit die bisherige URL erhalten bleibt."
+        pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', 'Bitte nur Kleinbuchstaben, Zahlen und Bindestriche verwenden.']
+      - label: Veröffentlichungsdatum
+        name: date
+        widget: datetime
+        date_format: DD.MM.YYYY
+        time_format: HH:mm
+        format: YYYY-MM-DDTHH:mm:ss[Z]
+      - label: Zuletzt geändert
+        name: updated
+        widget: datetime
+        date_format: DD.MM.YYYY
+        time_format: HH:mm
+        format: YYYY-MM-DDTHH:mm:ss[Z]
+        required: false
+      - label: Bereich
+        name: category
+        widget: select
+        options:
+          - { label: Sessions, value: sessions }
+          - { label: Hintergrund, value: hintergrund }
+      - label: Auf Website anzeigen
+        name: published
+        widget: boolean
+        default: true
+      - label: Kurzbeschreibung
+        name: excerpt
+        widget: text
+        hint: "Dieser Text erscheint auf der Startseite und in Suchmaschinen."
+      - label: Vorschaubild
+        name: featured_image
+        widget: image
+        required: false
+      - label: Bildbeschreibung
+        name: featured_image_alt
+        widget: string
+        required: false
+        hint: "Kurze Beschreibung für Screenreader und falls das Bild nicht geladen werden kann."
+      - label: Wix-Original
+        name: original_url
+        widget: string
+        required: false
+        hint: "Bei importierten Beiträgen bleibt hier der Link zu den bisherigen Wix-Kommentaren erhalten."
+      - label: Wix-ID
+        name: wix_id
+        widget: hidden
+        required: false
+      - label: Inhalt
+        name: body
+        widget: markdown
