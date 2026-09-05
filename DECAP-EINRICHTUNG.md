@@ -1,14 +1,15 @@
 # Decap CMS einmalig freischalten
 
-Die CMS-Dateien liegen unter `static/admin/` und werden als
-`https://thomaskopp.github.io/fackeln-am-abgrund/admin/` veröffentlicht. Decap
+Die CMS-Dateien liegen unter `static/admin/`. Der gewohnte Einstieg
+`https://thomaskopp.github.io/fackeln-am-abgrund/admin/` leitet automatisch zum
+Editor unter `https://fackeln-am-abgrund-cms.netlify.app/admin/` weiter. Decap
 schreibt veröffentlichte Änderungen direkt als Commit in den Branch `main`.
 Der Pages-Workflow baut und veröffentlicht daraufhin automatisch.
 
 GitHub Pages kann den geheimen Schlüssel einer GitHub-OAuth-Anwendung nicht
 selbst sicher speichern. Für den kleinen serverseitigen Teil der Anmeldung wird
-deshalb Netlifys OAuth-Dienst verwendet. Die Website bleibt auf GitHub Pages;
-Netlify wird nur für die Anmeldung benötigt.
+deshalb Netlifys OAuth-Dienst verwendet. Die öffentliche Website bleibt auf
+GitHub Pages. Netlify stellt nur den CMS-Editor und dessen Anmeldung bereit.
 
 ## 1. Netlify-Projekt anlegen
 
@@ -20,9 +21,9 @@ Netlify wird nur für die Anmeldung benötigt.
 4. Falls dieser Name bereits vergeben ist, einen anderen Namen wählen und danach
    in `static/admin/config.yml` den Wert `site_domain` auf die tatsächlich
    angezeigte Netlify-Domain ändern.
-5. Ein Netlify-Deployment ist für GitHub Pages nicht nötig. Falls Netlify einen
-   Build verlangt, `python3 build.py` als Build-Befehl und `site` als
-   Veröffentlichungsordner verwenden.
+5. Als Build-Befehl `python3 build.py --base ""` und als
+   Veröffentlichungsordner `site` verwenden. Dieses Deployment stellt den
+   CMS-Editor auf der für OAuth freigegebenen Netlify-Domain bereit.
 
 ## 2. GitHub-OAuth-Anwendung anlegen
 
@@ -47,7 +48,7 @@ Netlify wird nur für die Anmeldung benötigt.
 3. Client ID und Client Secret aus GitHub eintragen und speichern.
 
 Danach `https://thomaskopp.github.io/fackeln-am-abgrund/admin/` öffnen und
-**Login with GitHub** wählen. Der angemeldete GitHub-Nutzer benötigt
+**Mit GitHub einloggen** wählen. Der angemeldete GitHub-Nutzer benötigt
 Schreibzugriff auf `ThomasKopp/fackeln-am-abgrund`.
 
 ## Verwendung
