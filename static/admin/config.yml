@@ -17,6 +17,25 @@ media_folder: assets/uploads
 public_folder: /fackeln-am-abgrund/assets/uploads
 
 collections:
+  - name: pages
+    label: Seiten
+    files:
+      - name: homepage
+        label: Startseite
+        file: content/settings/homepage.json
+        format: json
+        fields:
+          - { label: Browser-Titel, name: browser_title, widget: string }
+          - { label: Beschreibung für Suchmaschinen, name: meta_description, widget: text }
+          - { label: Hauptüberschrift, name: hero_title, widget: string }
+          - { label: Unterüberschrift, name: hero_subtitle, widget: string }
+          - { label: Titelbild, name: hero_image, widget: image }
+          - { label: Bildbeschreibung, name: hero_image_alt, widget: string }
+          - { label: Überschrift des Session-Bereichs, name: sessions_title, widget: string }
+          - { label: Beschreibung des Session-Bereichs, name: sessions_description, widget: text }
+          - { label: Überschrift des Hintergrund-Bereichs, name: background_title, widget: string }
+          - { label: Beschreibung des Hintergrund-Bereichs, name: background_description, widget: text }
+
   - name: posts
     label: Beiträge
     label_singular: Beitrag
